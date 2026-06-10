@@ -167,7 +167,7 @@ private[scalarl] object CategoricalMonad extends Monad[Categorical] {
         queue: Queue[(Either[A, B], Double)]
     ): Map[B, Double] =
       queue.headOption match {
-        case None => acc
+        case None               => acc
         case Some((Left(a), v)) =>
           run(
             acc,

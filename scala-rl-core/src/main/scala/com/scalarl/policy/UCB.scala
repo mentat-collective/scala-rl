@@ -141,7 +141,7 @@ object UCB {
         case (0L, 0L) => 0
         case (0L, _)  => 1
         case (_, 0L)  => -1
-        case _ =>
+        case _        =>
           Ordering[Double].compare(
             totalValue(time),
             other.totalValue(time)
