@@ -109,7 +109,7 @@ object MonteCarlo {
       else {
         val (sars, shouldUpdate) = t.next
         agg.present(agg.append(g, sars)) match {
-          case None => vfn
+          case None     => vfn
           case Some(g2) =>
             val newFn = if (shouldUpdate.get) {
               val SARS(s, a, r, s2) = sars

@@ -78,7 +78,7 @@ object DecayState {
         case DecayedValue(a) => DecayedValue(GA.negate(a))
       }
       override def plus(l: DecayState[A], r: DecayState[A]) = (l, r) match {
-        case (Reward(a), Reward(b)) => Reward(GA.plus(a, b))
+        case (Reward(a), Reward(b))       => Reward(GA.plus(a, b))
         case (DecayedValue(a), Reward(b)) =>
           DecayedValue(GA.plus(M.scale(gamma, a), b))
         case (Reward(a), DecayedValue(b)) =>

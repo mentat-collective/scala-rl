@@ -88,7 +88,7 @@ object WeightedAverageGroup extends Group[WeightedAverage] with CommutativeGroup
       (n + k) match {
         case 0.0                       => 0.0
         case newCount if newCount == n => an
-        case newCount =>
+        case newCount                  =>
           val scaling = k / newCount
           // a_n + (a_k - a_n)*(k/(n+k)) is only stable if n is not approximately k
           if (scaling < STABILITY_CONSTANT) an + (ak - an) * scaling
